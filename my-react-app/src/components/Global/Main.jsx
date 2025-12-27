@@ -130,7 +130,7 @@ const Main = () => {
         </TimelineItem>
 
         <TimelineItem>
-          <div className="date">2025.09 - 2025.10</div>
+          <div className="date">2025.02 - 2025.7</div>
           <div>
             <h4>나만의 여행 기록 앱 (Personal)</h4>
             <p>
