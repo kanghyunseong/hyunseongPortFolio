@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// --- Nav Styles ---
 export const Nav = styled.nav`
   height: 70px;
   background: rgba(255, 255, 255, 0.9);
@@ -8,6 +9,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: all 0.3s ease;
 
   .content {
     display: flex;
@@ -17,6 +19,17 @@ export const Nav = styled.nav`
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+  }
+
+  /* 모바일: 네비게이션 높이 자동 조절 및 패딩 수정 */
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 10px 0;
+
+    .content {
+      flex-direction: column;
+      gap: 15px;
+    }
   }
 `;
 
@@ -43,6 +56,17 @@ export const Menu = styled.ul`
       color: #2563eb;
     }
   }
+
+  /* 모바일: 메뉴 간격 좁힘 */
+  @media (max-width: 768px) {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li a {
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 // --- Header Styles ---
@@ -56,11 +80,13 @@ export const HeaderSection = styled.header`
     font-weight: 800;
     margin-bottom: 24px;
     letter-spacing: -1.5px;
+    line-height: 1.2;
   }
 
   p {
     font-size: 1.2rem;
     color: #64748b;
+    padding: 0 20px; /* 텍스트가 화면 끝에 붙지 않도록 */
   }
 
   span.highlight {
@@ -78,6 +104,20 @@ export const HeaderSection = styled.header`
       z-index: -1;
     }
   }
+
+  /* 모바일: 헤더 패딩 및 폰트 사이즈 축소 */
+  @media (max-width: 768px) {
+    padding: 80px 0;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const ProfileContainer = styled.div`
@@ -85,8 +125,16 @@ export const ProfileContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  margin-left: 200px;
+  margin-left: 200px; /* 기존 PC 레이아웃 */
   margin-top: 50px;
+
+  /* 태블릿 및 모바일: 고정 마진 제거 후 중앙 정렬 */
+  @media (max-width: 960px) {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 100%;
+  }
 `;
 
 export const ProfileImage = styled.img`
@@ -100,6 +148,12 @@ export const ProfileImage = styled.img`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  /* 모바일: 이미지 크기 약간 축소 */
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 150px;
   }
 `;
 
@@ -120,10 +174,12 @@ export const AboutSection = styled.section`
   max-width: 1000px;
   margin: 0 auto;
 
+  /* 모바일: 세로 배치 및 간격 축소 */
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 40px;
+    padding: 50px 20px;
   }
 `;
 
@@ -150,12 +206,29 @@ export const DescriptionBox = styled.div`
     margin-bottom: 15px;
     word-break: keep-all;
   }
+
+  /* 모바일: 폰트 사이즈 조절 */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    /* 모바일에서 버튼 그룹 중앙 정렬 */
+    div {
+      justify-content: center;
+    }
+  }
 `;
 
 export const ContactLinks = styled.div`
   display: flex;
   gap: 15px;
   margin-top: 25px;
+
+  /* 모바일에서 링크 중앙 정렬 */
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 
   a {
     padding: 10px 20px;
@@ -183,6 +256,7 @@ export const ContactLinks = styled.div`
     }
   }
 `;
+
 export const HashTag = styled.span`
   background-color: #f1f3f6;
   color: #64748b;
@@ -197,6 +271,113 @@ export const HashTag = styled.span`
     background-color: #e2e8f0;
     color: #2563eb;
     transform: translateY(-2px);
+  }
+`;
+
+export const ServiceSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* 좌우 여백 추가 */
+
+  /* 태블릿: 2열 */
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 모바일: 1열 */
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
+
+export const ServiceCard = styled.div`
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  h4 {
+    margin: 15px 0;
+    color: #007bff;
+  }
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+  }
+`;
+
+export const TimelineSection = styled.section`
+  padding: 80px 20px;
+  background-color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+
+  /* 모바일: 패딩 축소 */
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
+`;
+
+export const TimelineItem = styled.div`
+  display: flex;
+  margin-bottom: 40px;
+  border-left: 2px solid #007bff;
+  padding-left: 30px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #007bff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #007bff;
+  }
+
+  .date {
+    font-size: 0.95rem;
+    color: #007bff;
+    font-weight: bold;
+    min-width: 150px;
+    margin-bottom: 8px;
+    flex-shrink: 0; /* 날짜가 줄어들지 않도록 고정 */
+  }
+
+  h4 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #333;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* 모바일: 날짜와 내용을 상하 배치 */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-left: 20px;
+
+    .date {
+      min-width: auto;
+      margin-bottom: 5px;
+    }
   }
 `;
 
@@ -228,6 +409,14 @@ export const FooterContent = styled.div`
     }
   }
 
+  /* 모바일: 소셜 링크 간격 조절 */
+  @media (max-width: 480px) {
+    .social-links a {
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+  }
+
   .description {
     font-size: 1rem;
     color: #888;
@@ -244,6 +433,12 @@ export const ButtonGroup = styled.div`
   display: flex;
   gap: 15px;
   margin-top: 20px;
+
+  /* 모바일: 버튼 중앙 정렬 및 랩핑 */
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 export const ActionButton = styled.a`
@@ -252,6 +447,7 @@ export const ActionButton = styled.a`
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  display: inline-block; /* a태그 패딩 적용 위해 */
 
   &.primary {
     background-color: #007bff;
@@ -266,93 +462,6 @@ export const ActionButton = styled.a`
     color: #007bff;
     &:hover {
       background-color: #f0f7ff;
-    }
-  }
-`;
-export const ServiceSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const ServiceCard = styled.div`
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s;
-  &:hover {
-    transform: translateY(-10px);
-  }
-
-  h4 {
-    margin: 15px 0;
-    color: #007bff;
-  }
-  p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
-  }
-`;
-export const TimelineSection = styled.section`
-  padding: 80px 20px;
-  background-color: #ffffff;
-  max-width: 900px;
-  margin: 0 auto;
-`;
-
-export const TimelineItem = styled.div`
-  display: flex;
-  margin-bottom: 40px;
-  border-left: 2px solid #007bff;
-  padding-left: 30px;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -9px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background-color: #007bff;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 2px #007bff;
-  }
-
-  .date {
-    font-size: 0.95rem;
-    color: #007bff;
-    font-weight: bold;
-    min-width: 150px;
-    margin-bottom: 8px;
-  }
-
-  h4 {
-    margin-bottom: 10px;
-    font-size: 1.25rem;
-    color: #333;
-  }
-
-  p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding-left: 20px;
-    .date {
-      min-width: auto;
     }
   }
 `;

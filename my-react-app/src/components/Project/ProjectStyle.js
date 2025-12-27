@@ -4,6 +4,7 @@ export const ProjectsWrapper = styled.div`
   max-width: 1000px;
   margin: 100px auto;
   padding: 0 20px;
+
   .header {
     text-align: center;
     margin-bottom: 40px;
@@ -16,6 +17,18 @@ export const ProjectsWrapper = styled.div`
   .subtitle {
     color: #888;
     margin-top: 10px;
+  }
+
+  /* 모바일: 전체 여백 및 폰트 사이즈 축소 */
+  @media (max-width: 768px) {
+    margin: 60px auto;
+
+    .title {
+      font-size: 2rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -68,7 +81,7 @@ export const SlideCard = styled.div`
   display: flex;
   flex-direction: column;
 
-  /* PC 버전: 가로 배치 */
+  /* PC 버전: 가로 배치 및 높이 고정 */
   @media (min-width: 768px) {
     flex-direction: row;
     height: 380px;
@@ -81,6 +94,12 @@ export const SlideCard = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    /* 모바일: 이미지가 너무 길어지지 않도록 높이 제한 */
+    height: 250px;
+    @media (min-width: 768px) {
+      height: auto; /* PC에서는 flex 부모 높이를 따름 */
+    }
 
     img {
       width: 100%;
@@ -154,6 +173,19 @@ export const SlideCard = styled.div`
         }
       }
     }
+
+    /* 모바일: 패딩 축소 및 폰트 조절 */
+    @media (max-width: 768px) {
+      padding: 20px;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+      }
+    }
   }
 `;
 
@@ -180,7 +212,7 @@ export const ArrowButton = styled.button`
     transform: translateY(-50%) scale(1.1);
   }
 
-  /* 💡 여기서 css 함수를 사용하므로 상단 import가 필수입니다 */
+  /* PC: 카드 바깥쪽에 위치 */
   ${(props) =>
     props.direction === "left" &&
     css`
@@ -192,7 +224,12 @@ export const ArrowButton = styled.button`
       right: -50px;
     `}
 
-  @media (max-width: 900px) {
+  /* 태블릿 및 모바일: 카드 안쪽으로 위치 이동 및 크기 조절 */
+  @media (max-width: 1000px) {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.9); /* 살짝 투명하게 */
+
     ${(props) =>
       props.direction === "left" &&
       css`
@@ -208,11 +245,17 @@ export const ArrowButton = styled.button`
 
 export const SmallGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  /* 모바일 호환성 향상: 최소 너비를 280px 정도로 줄여 작은 폰에서도 1열로 예쁘게 보이게 함 */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: center;
   gap: 25px;
   width: 100%;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; /* 아주 작은 화면에서는 무조건 1열 */
+  }
 `;
+
 export const SmallCard = styled.div`
   background: #f9f9f9;
   padding: 25px;
@@ -262,6 +305,14 @@ export const SmallCard = styled.div`
     color: #007bff;
     font-weight: bold;
   }
+
+  /* 모바일: 패딩 약간 축소 */
+  @media (max-width: 480px) {
+    padding: 20px;
+    p {
+      min-height: auto; /* 폰에서는 높이 맞춤 해제 */
+    }
+  }
 `;
 
 export const ResumeBanner = styled.a`
@@ -269,19 +320,19 @@ export const ResumeBanner = styled.a`
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  border: 2px solid #007bff; /* 포인트 컬러 */
+  border: 2px solid #007bff;
   border-radius: 20px;
   padding: 30px 40px;
   text-decoration: none;
   color: #333;
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(0, 123, 255, 0.1);
-  max-width: 900px; /* 적당한 너비 */
-  margin: 0 auto; /* 중앙 정렬 */
+  max-width: 900px;
+  margin: 0 auto;
 
   &:hover {
     transform: translateY(-5px);
-    background: #f0f7ff; /* 호버 시 아주 연한 파란색 배경 */
+    background: #f0f7ff;
     box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
   }
 
@@ -319,11 +370,11 @@ export const ResumeBanner = styled.a`
     transform: translateX(5px);
   }
 
-  /* 모바일 대응 */
+  /* 모바일: 세로 정렬 및 텍스트 중앙 정렬 */
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 25px 20px;
 
     .icon-box {
       margin-right: 0;
@@ -332,9 +383,20 @@ export const ResumeBanner = styled.a`
     }
 
     .text-box {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* 모바일에서는 화살표가 아래로 회전하거나 숨김 처리 등을 고려할 수 있음 */
+    .arrow-box {
+      transform: rotate(90deg);
+      &:hover {
+        transform: rotate(90deg) translateY(5px);
       }
     }
   }

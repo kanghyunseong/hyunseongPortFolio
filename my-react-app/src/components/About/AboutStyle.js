@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
-// 기존 AboutWrapper 등은 그대로 두시고 아래 내용들을 추가/수정하세요.
-
 export const AboutWrapper = styled.div`
   max-width: 1000px;
   margin: 100px auto;
   padding: 0 20px;
-  /* 화면 중앙 정렬 및 여백 확보 */
   min-height: calc(100vh - 350px);
-  text-align: left; /* 기본 정렬을 왼쪽으로 변경 (가독성 위해) */
+  text-align: left;
 
   /* Intro 섹션만 중앙 정렬 */
   .intro {
@@ -19,15 +16,14 @@ export const AboutWrapper = styled.div`
   h1 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    word-break: keep-all; /* 단어 단위 줄바꿈 */
+    word-break: keep-all;
   }
 
-  /* 공통 섹션 제목 스타일 */
   h3 {
     font-size: 1.8rem;
     margin-bottom: 30px;
     color: #007bff;
-    text-align: center; /* 제목은 중앙 정렬 */
+    text-align: center;
     font-weight: 700;
   }
 
@@ -37,7 +33,6 @@ export const AboutWrapper = styled.div`
     font-size: 1.05rem;
   }
 
-  /* Information 섹션은 중앙 정렬이 예쁠 수 있음 */
   .info {
     text-align: left;
     margin-top: 80px;
@@ -47,27 +42,58 @@ export const AboutWrapper = styled.div`
       padding-bottom: 10px;
     }
   }
+
+  /* 📱 모바일 반응형 추가 (768px 이하) */
+  @media (max-width: 768px) {
+    margin: 60px auto; /* 상단 여백 줄임 */
+
+    h1 {
+      font-size: 1.8rem; /* 폰트 사이즈 줄임 */
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      margin-bottom: 50px;
+    }
+
+    .info {
+      margin-top: 50px;
+    }
+  }
 `;
 
-// [NEW] 스토리 섹션 스타일
 export const StorySection = styled.section`
   margin-bottom: 80px;
-  background-color: #f8f9fa; /* 은은한 배경색 */
+  background-color: #f8f9fa;
   padding: 40px;
   border-radius: 15px;
 
   p {
     margin-bottom: 15px;
-    text-align: center; /* 스토리 본문 중앙 정렬 (원하면 left로 변경) */
+    text-align: center;
     word-break: keep-all;
   }
   strong {
     color: #333;
     font-weight: 700;
   }
+
+  /* 📱 모바일 반응형 추가 */
+  @media (max-width: 768px) {
+    padding: 25px; /* 패딩 줄임 */
+    margin-bottom: 50px;
+
+    p {
+      text-align: left; /* 모바일에서는 긴 글을 왼쪽 정렬이 읽기 편할 수 있음 (선택사항) */
+      font-size: 1rem;
+    }
+  }
 `;
 
-// [NEW] 업무 스타일 리스트 스타일
 export const StyleList = styled.ul`
   list-style: none;
   padding: 0;
@@ -75,7 +101,7 @@ export const StyleList = styled.ul`
   flex-direction: column;
   gap: 20px;
   max-width: 800px;
-  margin: 0 auto; /* 중앙 배치 */
+  margin: 0 auto;
 
   li {
     display: flex;
@@ -86,7 +112,7 @@ export const StyleList = styled.ul`
     color: #444;
 
     .check-icon {
-      color: #007bff; /* 파란색 체크 아이콘 */
+      color: #007bff;
       font-size: 1.4rem;
       margin-top: 3px;
       flex-shrink: 0;
@@ -98,22 +124,35 @@ export const StyleList = styled.ul`
       margin-right: 5px;
     }
   }
+
+  /* 📱 모바일 반응형 추가 */
+  @media (max-width: 768px) {
+    li {
+      font-size: 1rem;
+      gap: 10px;
+    }
+    .check-icon {
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+  }
 `;
 
-// 기존 ValueGrid, ValueCard, InfoList는 그대로 유지...
 export const ValueGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+
+  /* 📱 모바일 반응형 (기존에 있던 것 유지) */
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1줄로 변경 */
   }
 `;
 
 export const ValueCard = styled.div`
   padding: 30px;
-  background: #fff; /* 배경 흰색 */
-  border: 1px solid #eee; /* 테두리 추가 */
+  background: #fff;
+  border: 1px solid #eee;
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s;
@@ -146,23 +185,23 @@ export const InfoList = styled.ul`
   li {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    display: flex; /* 가로 배치 (라벨 - 내용) */
-    align-items: flex-start; /* 내용은 위쪽 정렬 */
-    gap: 20px; /* 라벨과 내용 사이 간격 */
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   strong {
-    min-width: 120px; /* 라벨(Name, Education 등) 너비 고정 */
+    min-width: 120px;
     font-weight: 700;
     color: #333;
-    flex-shrink: 0; /* 라벨이 줄어들지 않도록 설정 */
-    line-height: 1.6; /* 줄 간격 맞춤 */
+    flex-shrink: 0;
+    line-height: 1.6;
   }
 
   .text-content {
     display: flex;
-    flex-direction: column; /* 내용을 세로로 쌓음 */
-    gap: 8px; /* 줄 간격 */
+    flex-direction: column;
+    gap: 8px;
     color: #555;
     line-height: 1.6;
   }
@@ -171,6 +210,24 @@ export const InfoList = styled.ul`
     transition: color 0.2s;
     &:hover {
       color: #007bff;
+    }
+  }
+
+  /* 📱 모바일 반응형 추가 (핵심 수정) */
+  @media (max-width: 768px) {
+    li {
+      flex-direction: column; /* 라벨과 내용을 세로로 배치 */
+      gap: 5px; /* 간격 좁힘 */
+    }
+
+    strong {
+      min-width: auto; /* 고정 너비 해제 */
+      margin-bottom: 5px;
+      font-size: 1.15rem; /* 라벨을 조금 더 크게 강조 */
+    }
+
+    .text-content {
+      padding-left: 0; /* 들여쓰기 제거 */
     }
   }
 `;
