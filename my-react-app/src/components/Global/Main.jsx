@@ -16,7 +16,7 @@ const Main = () => {
   return (
     <div style={{ width: "100%" }}>
       <AboutSection id="about">
-        <ProfileImage src="../public/img/myImage.jpeg" alt="프로필 이미지" />
+        <ProfileImage src="/img/myImage.jpeg" alt="프로필 이미지" />
         <DescriptionBox>
           <div className="label">Available for Work</div>
           <h2>강현성</h2>

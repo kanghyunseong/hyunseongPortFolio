@@ -31,7 +31,7 @@ const Projects = () => {
       description:
         "Spring Boot와 React를 활용한 풀스택 프로젝트입니다. 실시간 API 연동과 사용자 커뮤니티 활성화에 집중했습니다.",
       tech: ["Java", "Spring Boot", "React", "Oracle"],
-      image: "/public/img/shareEv.png",
+      image: "/img/shareEv.png",
       links: {
         front: "https://github.com/kanghyunseong/front_react",
         back: "https://github.com/kanghyunseong/backend_springboot",
@@ -43,7 +43,7 @@ const Projects = () => {
       description:
         "Context API를 활용한 상태 관리와 사용자 맞춤형 UI/UX를 제공하는 개인 알약 배출 관리 서비스입니다.",
       tech: ["React-native", "TypeScript", "Nest.js", "Type-ORM"],
-      image: "/public/img/launch_screen.png",
+      image: "/img/launch_screen.png",
       links: {
         front: "https://github.com/kanghyunseong/TDB_Project",
       },
@@ -54,7 +54,7 @@ const Projects = () => {
       description:
         "React와 Styled-Components로 제작한 개인 포트폴리오 사이트입니다. 반응형 디자인을 지원합니다.",
       tech: ["React", "Vite", "Styled-componet"],
-      image: "/public/img/image.png",
+      image: "/img/image.png",
       links: {
         front: "https://github.com/kanghyunseong/portfolio",
       },
@@ -66,7 +66,7 @@ const Projects = () => {
       tech: [
         "React Native, 공공데이터포탈 API, Zustand, TypeORM, Nest.js, Postgresql, AWS EC2, RDS, S3",
       ],
-      image: "/public/img/ic_launcher_round.png",
+      image: "/img/ic_launcher_round.png",
       links: {
         front: "https://github.com/kanghyunseong/Journey",
       },
