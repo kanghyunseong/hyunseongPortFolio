@@ -1,5 +1,4 @@
 import React from "react";
-// 체크 아이콘(FaCheckCircle) 추가
 import {
   FaPenNib,
   FaUsers,
@@ -40,26 +39,20 @@ const About = () => {
         <p>
           <strong>"왜 이 코드는 이렇게 동작할까?"</strong>
           <br />
-          단순한 호기심에서 시작한 코딩이 이제는 제 일상이 되었습니다. KH
-          정보교육원 과정을 통해 웹 개발의 전반적인 흐름을 익혔고, 팀
-          프로젝트에서 <strong>공유 전기차 서비스</strong>를 구축하며 백엔드
-          로직 설계와 프론트엔드 상태 관리의 중요성을 몸소 체험했습니다.
+          단순한 호기심에서 시작한 코딩이 이제는 제 일상이 되었습니다. <br />
+          작성한 코드가 즉각적인 결과물로 나타나는 과정에서 큰 성취감을 느꼈고,
+          이는 제가 개발자로서의 길을 걷게 된 가장 큰 원동력이 되었습니다.
         </p>
         <p>
-          또한, 코드를 작성하고 "내가 작업한 결과" 라는 것이 눈에 확
-          들어오기떄문에 조금더 코드작성하는 것이 재미있고 즐거워서 개발자의
-          길을 걷게 된 것 같습니다.
+          KH 정보교육원에서 <strong>프로젝트 기반 AWS 웹 풀스택 과정</strong>을
+          수료하며 웹 개발의 전반적인 흐름을 익혔습니다. 특히 팀 프로젝트로
+          <strong>공유 전기차 서비스</strong>를 구축하며, 백엔드 로직 설계와
+          프론트엔드 상태 관리의 중요성을 몸소 체험했습니다.
         </p>
         <p>
           저는 화려한 기술보다 <strong>탄탄한 기본기</strong>를 중요하게
           생각합니다. 새로운 기술을 무작정 도입하기보다, 현재 프로젝트에 필요한
           최적의 기술이 무엇인지 고민하고 적용하는 과정을 즐깁니다.
-        </p>
-        <p>
-          KH 정보교육원에서
-          <strong>프로젝트 기반 AWS 웹 풀스택 개발자 양성</strong>국비
-          프로그램을 수강하고 해당 교육을 받은 후 웹 개발자를 지원하게 되었고,
-          프로젝트를 통해 웹 개발자의 능력을 더 키울 수 있었습니다.
         </p>
       </StorySection>
 
@@ -92,7 +85,6 @@ const About = () => {
         </ValueGrid>
       </section>
 
-      {/* 4. [NEW] Work Style: 구체적인 업무 방식 */}
       <section className="work-style" style={{ marginTop: "80px" }}>
         <h3>How I Work</h3>
         <StyleList>
@@ -120,16 +112,27 @@ const About = () => {
         </StyleList>
       </section>
 
-      {/* 5. Information */}
       <section className="info">
         <h3>Information</h3>
         <InfoList>
           <li>
             <strong>Name:</strong> 강현성
           </li>
+          {/* ✅ Education 부분 수정: 하이픈 추가 */}
           <li>
-            <strong>Education:</strong> KH 정보교육원 풀스택 웹 개발자 양성 과정
-            수료
+            <strong>Education:</strong>
+            <div className="text-content">
+              <span>
+                - 경동대학교 컴퓨터공학과 (2020.03 ~ 2026.02 졸업 예정)
+              </span>
+              <span>- 영훈고등학교 (2017.03 ~ 2020.02 졸업)</span>
+            </div>
+          </li>
+          <li>
+            <strong>Training:</strong>
+            <div className="text-content">
+              <span>- KH 정보교육원 풀스택 웹 개발자 양성 과정 수료</span>
+            </div>
           </li>
           <li>
             <strong>Contact:</strong>
@@ -142,7 +145,10 @@ const About = () => {
           </li>
           <li>
             <strong>Channels:</strong>
-            <div style={{ display: "flex", gap: "15px", marginTop: "5px" }}>
+            <div
+              className="text-content"
+              style={{ flexDirection: "row", gap: "15px" }}
+            >
               <a
                 href="https://github.com/kanghyunseong"
                 target="_blank"
@@ -159,7 +165,7 @@ const About = () => {
                 <FaGithub /> GitHub
               </a>
               <a
-                href="노션주소입력"
+                href="https://jumbled-railway-172.notion.site/2ca88b73649880e7bb02de55056e8693?pvs=73"
                 target="_blank"
                 rel="noreferrer"
                 style={{

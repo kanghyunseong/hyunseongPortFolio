@@ -5,9 +5,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaExternalLinkAlt,
-  FaBook, // Notion 대신 쓸 일반 아이콘 (SiNotion이 없다면 이걸 쓰세요)
+  FaUserTie, // 이력서 아이콘
 } from "react-icons/fa";
-// SiNotion을 쓰려면: npm install react-icons 하고 아래 주석 해제
 import { SiNotion } from "react-icons/si";
 
 import {
@@ -17,13 +16,14 @@ import {
   ArrowButton,
   SmallGrid,
   SmallCard,
+  ResumeBanner, // 스타일 파일에 추가할 컴포넌트
 } from "./ProjectStyle";
 
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // ... (mainProjects 데이터는 기존과 동일하게 유지) ...
+  // 1. 메인 프로젝트 데이터
   const mainProjects = [
     {
       id: 1,
@@ -73,6 +73,7 @@ const Projects = () => {
     },
   ];
 
+  // 2. 기타 프로젝트 데이터
   const otherProjects = [
     {
       id: 1,
@@ -90,43 +91,47 @@ const Projects = () => {
     },
   ];
 
-  // ✅ 추가: Notion / Study 데이터
+  // 3. 이력서 데이터 (단독)
+  const resumeLink =
+    "https://jumbled-railway-172.notion.site/2ca88b73649880e7bb02de55056e8693?pvs=73";
+
+  // 4. 학습 노션 데이터 (이력서 제외)
   const studyLinks = [
     {
       id: 1,
       title: "HTML, CSS 학습 노션",
-      desc: "HTML, CSS를 학습한 것을 정리해놓은 노션입니다. 해당 노션에는 태그들에 관한 정리를 해두었습니다.",
+      desc: "HTML, CSS 태그와 스타일링 기법을 정리한 노트입니다.",
       link: "https://jumbled-railway-172.notion.site/HTML-CSS-e6ad3ac316e340b7a8a463b5391b68f1?pvs=73",
     },
     {
       id: 2,
       title: "DataBase 학습 노션",
-      desc: "DataBase에 대한 기본적인 학습에 대한 노션입니다.",
+      desc: "RDBMS 기초와 SQL 쿼리 작성법을 정리했습니다.",
       link: "https://jumbled-railway-172.notion.site/Database-dc321558f91e46b4ba583e8ffd34912c?pvs=73",
     },
     {
       id: 3,
       title: "Java 학습 노션",
-      desc: "Java에 관한 기본적인 학습과 Java 학습에 있어 필요한 것을 모아둔 노션입니다.",
+      desc: "Java 기초 문법부터 객체지향 프로그래밍까지 정리한 노트입니다.",
       link: "https://jumbled-railway-172.notion.site/Java-24788b73649880899c3bd5efcae2967c?pvs=73",
     },
     {
       id: 4,
       title: "JavaScript 학습 노션",
-      desc: "React를 사용하기 위한 JavaScript학습 노션입니다.",
+      desc: "React 학습의 기초가 되는 JS 핵심 개념 정리입니다.",
       link: "https://jumbled-railway-172.notion.site/JavaScript-1d988b7364988193bbffcd5f69cf1dee?pvs=73",
     },
     {
       id: 5,
-      title: "나만의 GitHub정리",
-      desc: "Git을 효율적으로 사용하기 위해 정리했습니다.",
+      title: "Git/GitHub 학습 정리",
+      desc: "협업을 위한 Git 명령어와 워크플로우 정리입니다.",
       link: "https://jumbled-railway-172.notion.site/Git-GitHub-1d988b73649881f19764db15f9faccb9?pvs=73",
     },
     {
       id: 6,
-      title: "더 많은 정보는 해당 노션에 모여있습니다!",
-      desc: "해당 노션은 저의 개인적인 공부 목적이 담긴 노션 주소입니다.",
-      link: "https://jumbled-railway-172.notion.site/1d988b73649880088ad4cb8408d8ba82?v=1d988b7364988068b142000cbc84ce00",
+      title: "강현성의 개인적인 공부 파일이 담겨있는 노션 페이지입니다.",
+      desc: "강현성의 개인 공부 노션 페이지입니다.",
+      link: "https://jumbled-railway-172.notion.site/1d988b73649880088ad4cb8408d8ba82?v=1d988b7364988068b142000cbc84ce00&pvs=73",
     },
   ];
 
@@ -163,7 +168,6 @@ const Projects = () => {
         </p>
       </header>
 
-      {/* Main Carousel */}
       <CarouselContainer
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -189,13 +193,11 @@ const Projects = () => {
                 <div className="info-box">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-
                   <div className="tags">
                     {project.tech.map((t, i) => (
                       <span key={i}>#{t}</span>
                     ))}
                   </div>
-
                   <div className="btn-group">
                     {project.links.front && (
                       <a
@@ -213,16 +215,6 @@ const Projects = () => {
                         rel="noreferrer"
                       >
                         <FaGithub /> BE Code
-                      </a>
-                    )}
-                    {project.links.demo && (
-                      <a
-                        href={project.links.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="demo"
-                      >
-                        <FaExternalLinkAlt /> Live Demo
                       </a>
                     )}
                   </div>
@@ -279,7 +271,24 @@ const Projects = () => {
         ))}
       </SmallGrid>
 
-      <header className="header" style={{ marginTop: "100px" }}>
+      {/* ✅ [NEW] 이력서 강조 배너 (Resume Section) */}
+      <div style={{ marginTop: "100px", marginBottom: "60px" }}>
+        <ResumeBanner href={resumeLink} target="_blank" rel="noreferrer">
+          <div className="icon-box">
+            <FaUserTie />
+          </div>
+          <div className="text-box">
+            <h3>강현성의 자세한 이력서와 포트폴리오가 궁금하시다면?</h3>
+            <p>여기를 클릭해서 노션 페이지로 접속해주세요! 🚀</p>
+          </div>
+          <div className="arrow-box">
+            <FaExternalLinkAlt />
+          </div>
+        </ResumeBanner>
+      </div>
+
+      {/* Study & Archive */}
+      <header className="header">
         <h2 className="title" style={{ fontSize: "2rem" }}>
           Study & Archive
         </h2>
@@ -290,7 +299,6 @@ const Projects = () => {
         {studyLinks.map((study) => (
           <SmallCard key={study.id}>
             <div className="top-row">
-              {/* Notion 아이콘 적용 (없으면 FaBook 사용) */}
               <SiNotion className="folder-icon" style={{ color: "#000" }} />
               <a
                 href={study.link}

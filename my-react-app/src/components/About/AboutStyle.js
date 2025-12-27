@@ -144,16 +144,33 @@ export const InfoList = styled.ul`
   padding: 0;
 
   li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1.1rem;
-    display: flex;
-    align-items: center; /* 세로 중앙 정렬 */
-    flex-wrap: wrap;
-    gap: 10px;
+    display: flex; /* 가로 배치 (라벨 - 내용) */
+    align-items: flex-start; /* 내용은 위쪽 정렬 */
+    gap: 20px; /* 라벨과 내용 사이 간격 */
   }
+
   strong {
-    color: #333;
-    min-width: 100px; /* 라벨 너비 고정 */
+    min-width: 120px; /* 라벨(Name, Education 등) 너비 고정 */
     font-weight: 700;
+    color: #333;
+    flex-shrink: 0; /* 라벨이 줄어들지 않도록 설정 */
+    line-height: 1.6; /* 줄 간격 맞춤 */
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column; /* 내용을 세로로 쌓음 */
+    gap: 8px; /* 줄 간격 */
+    color: #555;
+    line-height: 1.6;
+  }
+
+  a {
+    transition: color 0.2s;
+    &:hover {
+      color: #007bff;
+    }
   }
 `;

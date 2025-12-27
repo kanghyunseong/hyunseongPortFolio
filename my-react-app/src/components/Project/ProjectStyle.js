@@ -263,3 +263,79 @@ export const SmallCard = styled.div`
     font-weight: bold;
   }
 `;
+
+export const ResumeBanner = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 2px solid #007bff; /* 포인트 컬러 */
+  border-radius: 20px;
+  padding: 30px 40px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 123, 255, 0.1);
+  max-width: 900px; /* 적당한 너비 */
+  margin: 0 auto; /* 중앙 정렬 */
+
+  &:hover {
+    transform: translateY(-5px);
+    background: #f0f7ff; /* 호버 시 아주 연한 파란색 배경 */
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+  }
+
+  .icon-box {
+    font-size: 3rem;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .text-box {
+    flex: 1;
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    p {
+      color: #666;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .arrow-box {
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: 0.3s;
+  }
+
+  &:hover .arrow-box {
+    color: #007bff;
+    transform: translateX(5px);
+  }
+
+  /* 모바일 대응 */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+    .icon-box {
+      margin-right: 0;
+      margin-bottom: 15px;
+      font-size: 2.5rem;
+    }
+
+    .text-box {
+      margin-bottom: 15px;
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+`;
