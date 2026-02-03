@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { HeaderSection } from "./GlobalStyle";
 
 const Header = () => (

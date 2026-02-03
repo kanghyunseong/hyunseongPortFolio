@@ -1,6 +1,5 @@
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Route, Routes, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MainHomePage from "./components/pages/MainHomePage";
 import About from "./components/About/About";
 import Navbar from "./components/Global/Navbar";

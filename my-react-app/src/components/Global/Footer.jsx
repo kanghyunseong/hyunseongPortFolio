@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { FaGithub, FaEnvelope, FaBlog } from "react-icons/fa";
 import { FooterContainer, FooterContent } from "./GlobalStyle";
 

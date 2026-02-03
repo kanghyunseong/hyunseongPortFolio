@@ -145,6 +145,26 @@ export const SlideCard = styled.div`
       gap: 10px;
       flex-wrap: wrap;
 
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: 0.2s;
+        border: 1px solid #333;
+        color: #333;
+        background: #fff;
+        cursor: pointer;
+
+        &:hover {
+          background: #333;
+          color: #fff;
+        }
+      }
+
       a {
         display: inline-flex;
         align-items: center;
@@ -184,6 +204,175 @@ export const SlideCard = styled.div`
       p {
         font-size: 0.95rem;
         margin-bottom: 15px;
+      }
+    }
+  }
+`;
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+  overflow: auto;
+`;
+
+export const ModalContainer = styled.div`
+  width: min(900px, 100%);
+  max-height: min(80vh, 800px);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee;
+`;
+
+export const ModalTitle = styled.h3`
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #222;
+  line-height: 1.3;
+`;
+
+export const ModalCloseButton = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: 0.15s;
+
+  &:hover {
+    background: #f3f4f6;
+    border-color: #cfd6dd;
+  }
+`;
+
+export const ModalBody = styled.div`
+  padding: 18px 20px 24px;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+
+  .hero-img {
+    width: 100%;
+    height: 320px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f1f1f1;
+    margin-bottom: 18px;
+    border: 1px solid #eee;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-img {
+      height: 220px;
+    }
+  }
+`;
+
+export const ModalSection = styled.section`
+  & + & {
+    margin-top: 18px;
+  }
+
+  h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #222;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+    word-break: keep-all;
+    white-space: pre-wrap;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #666;
+    line-height: 1.7;
+  }
+`;
+
+export const ModalTagRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+export const ModalTag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f0f7ff;
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  color: #007bff;
+  font-weight: 800;
+  font-size: 0.85rem;
+`;
+
+export const ModalLinkRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 1px solid #333;
+    color: #333;
+    transition: 0.2s;
+    background: #fff;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    &.demo {
+      border-color: #007bff;
+      color: #007bff;
+      &:hover {
+        background: #007bff;
+        color: #fff;
       }
     }
   }

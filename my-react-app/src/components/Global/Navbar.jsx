@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Nav, Logo, Menu } from "./GlobalStyle";
 import { useNavigate } from "react-router-dom";
 
