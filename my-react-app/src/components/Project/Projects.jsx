@@ -287,7 +287,7 @@ React 기반 SPA와 Spring Boot REST API로 구성된 풀스택 프로젝트입�
         "MyBatis",
         "Swagger",
         "AWS S3",
-        "WebSocket",
+        "WebSocket", "OSHI",
       ],
       image: null,
       role: `담당 역할 : 관리자 페이지 중심 프론트엔드 개발 (기여도 약 60%)
