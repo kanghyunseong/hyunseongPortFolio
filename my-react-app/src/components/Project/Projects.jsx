@@ -30,8 +30,8 @@ const Projects = () => {
     {
       id: 1,
       title: "공유 전기차 커뮤니티 서비스",
-      description: `공유 전기차 플랫폼 Share EV 입니다.
-Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 하는 서비스입니다.`,
+      description: `Share EV는 회원 간 전기차를 공유·대여할 수 있는 커뮤니티 기반 플랫폼입니다.
+공공데이터 기반 충전소 정보와 예약·커뮤니티·관리자 기능을 통해 친환경 모빌리티 문화를 확산하는 것을 목표로 합니다.`,
       tech: [
         "React",
         "Vite",
@@ -47,8 +47,8 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
       ],
       image: "/img/shareEv.png",
       role: `담당 역할 : 팀장, Full-Stack 개발
-- 맡은 파트/기여도 : 관리자 대시보드 기능 구현 / 60%
-- 구현한 기능 범위 : 관리자 대시보드 기능 구현`,
+- 기여도 : 약 60% (관리자 대시보드 및 관리 기능 중심)
+- 주요 담당 : 관리자 대시보드(차트), 차량/회원/커뮤니티 신고·공지 관리`,
       detail: `Share EV는 “회원 간 전기차 공유/대여”를 중심으로 예약/충전소/커뮤니티/관리자 기능을 제공하는 플랫폼입니다.
 
 [Frontend - React/Vite]
@@ -96,13 +96,14 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
     {
       id: 2,
       title: "TDB_Project",
-      description: `TDB(Tablet Dispenser) 프로젝트는 아두이노/라즈베리파이/모바일 애플리케이션으로 구성된 하드웨어 연동 서비스입니다.
-사용자가 알약을 직접 챙기지 않아도 디스펜서에 넣어두면, RFID로 유저를 확인하고 앱에서 지정한 스케줄에 맞춰 1일치 알약을 배출해 전용 케이스에 담도록 구현했습니다.`,
+      description: `TDB(Tablet Dispenser)는 아두이노·라즈베리파이·모바일 앱을 연동해
+사용자가 알약을 직접 챙기지 않아도 디스펜서에 넣어두기만 하면, RFID로 유저를 확인하고
+앱에서 지정한 스케줄에 맞춰 1일치 알약을 자동 배출해 주는 복약 관리 서비스입니다.`,
       tech: ["React Native", "TypeScript", "NestJS", "TypeORM", "MySQL", "QR", "RFID"],
       image: "/img/launch_screen.png",
-      role: `프론트엔드 개발 및 서버 개발 (기여도 70%)
-- 모바일 앱 기능 구현 및 서버 연동
-- 디스펜서 연동(식별/상태/결과 동기화) 흐름 구성`,
+      role: `담당 역할 : 프론트엔드 및 서버 개발 (기여도 약 70%)
+- 모바일 앱 화면/플로우 구성 및 서버 연동
+- 복용 스케줄·통계·가족(보호자/피보호자) 기능, 디스펜서 연동 흐름 구현`,
       detail: `구성
 - Mobile App(React Native): 사용자 인증, 약/영양제 등록/관리, 복용 스케줄 설정, 복용 기록/통계 확인 UI
 - Device: RFID 기반 유저 확인 및 스케줄 기반 알약 배출
@@ -137,12 +138,12 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
       id: 3,
       title: "포트폴리오 웹사이트",
       description: `React와 Styled-Components로 제작한 개인 포트폴리오 웹사이트입니다.
-별도 서버 없이 CSR로 구성하고, 캐러셀 같은 UI를 외부 라이브러리 없이 직접 구현해 번들 의존도를 낮추는 데 집중했습니다.`,
+별도 서버 없이 CSR로 구성하고, 캐러셀·레이아웃 등 주요 UI를 외부 라이브러리에 의존하지 않고 직접 구현하는 데 집중했습니다.`,
       tech: ["React", "Vite", "Styled-components"],
       image: "/img/image.png",
-      role: `기획/디자인/개발 전 과정 단독
-- UI 컴포넌트 설계 및 반응형 적용
-- 프로젝트 섹션(캐러셀/상세보기) 구현`,
+      role: `담당 역할 : 기획 · 디자인 · 개발 전 과정 단독
+- 정보 구조 설계와 디자인 시안 제작
+- UI 컴포넌트/페이지 구현 및 배포까지 전체 담당`,
       detail: `구현 포인트
 - Custom Carousel: React Hooks(useState/useEffect)로 Auto Play(4초), Hover Pause, Infinite Loop 직접 구현
 - Component-driven: Styled-components로 컴포넌트 단위 스타일 캡슐화(전역 스타일 별도 관리)
@@ -167,7 +168,7 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
       id: 4,
       title: "Journey - 나만의 여행 모바일 애플리케이션",
       description:
-        "지도 기반 장소 공유 모바일 앱으로, 방문 장소를 지도에 등록하고 사진/설명으로 피드를 작성하며 캘린더에서 날짜별 게시물을 확인할 수 있는 서비스입니다.",
+        "Journey는 지도를 기반으로 방문한 장소를 기록하고, 사진·설명과 함께 피드를 남기며 캘린더에서 날짜별 여행 기록을 확인할 수 있는 모바일 앱입니다.",
       tech: [
         "React Native",
         "TypeScript",
@@ -178,9 +179,9 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
         "Zustand",
       ],
       image: "/img/ic_launcher_round.png",
-      role: `지도/피드/캘린더 기능 구현 및 상태관리 구조 설계
-- Kakao 장소 검색 연동 및 권한 요청 UX
-- 서버 상태(react-query)와 클라이언트 상태(Zustand) 역할 분리`,
+      role: `담당 역할 : 프론트엔드(모바일) 개발 (기여도 100%)
+- 지도/피드/캘린더 기능 구현 및 상태관리 구조 설계
+- Kakao 장소 검색 연동 및 권한 요청 UX, react-query + Zustand 상태 관리 도입`,
       detail: `핵심 기능
 - 지도 기반 장소 조회/등록(react-native-maps)
 - Kakao 장소 검색 연동
@@ -219,7 +220,7 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
       id: 5,
       title: "climateProject - 경기기후바이브 해커톤",
       description:
-        "경기기후플랫폼 API를 활용해 지역별 기후 데이터를 지도 위에 시각화하고, 사용자 목적에 맞는 최적 지역을 추천하는 서비스(해커톤 프로토타입)입니다.",
+        "climateProject는 경기기후플랫폼 API를 활용해 지역별 기후 데이터를 지도 위에 시각화하고, 사용자 목적(거주·농업·관광·투자 등)에 맞는 최적 지역을 추천하는 해커톤용 프로토타입 서비스입니다.",
       tech: [
         "TypeScript",
         "Vite",
@@ -231,9 +232,9 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
         "WFS",
       ],
       image: "/img/climate.png",
-      role: `프론트엔드 개발, 백엔드 개발 (기여도 100%)
+      role: `담당 역할 : 프론트엔드 · 백엔드 개발 (기여도 100%)
 - 지도 기반 시각화(WMS/WFS) 구현
-- 목적별 추천 로직 설계 및 UI 연결`,
+- 목적별 추천 로직 설계 및 UI 연동`,
       detail: `프로젝트 핵심 구현
 1) 경기기후플랫폼 WMS/WFS 기반 공간 데이터 엔진 구축
 - WMS 레이어 오버레이: 기온/강수량/습도/토양 등 다양한 레이어를 지도 위에 실시간 렌더링하고, 사용자 인터랙션에 따라 즉시 교체
@@ -259,6 +260,65 @@ Share EV는 회원들 간 전기차를 공유하여 탄소 절감을 목표로 �
         front: "https://github.com/kanghyunseong/climateProject",
       },
     },
+    {
+      id: 6,
+      title: "ReacTrip - 여행 기록·공유 플랫폼",
+      description: `ReacTrip은 여행 일정과 일기를 한곳에서 관리하고,
+지도·캘린더·룰렛·커뮤니티 기능으로 여행 경험을 시각화하고 공유할 수 있는 웹 서비스입니다.
+React 기반 SPA와 Spring Boot REST API로 구성된 풀스택 프로젝트입니다.`,
+      tech: [
+        "React",
+        "Vite",
+        "React Router DOM",
+        "Styled-components",
+        "Tailwind CSS",
+        "FullCalendar",
+        "Swiper",
+        "Chart.js",
+        "Axios",
+        "SockJS",
+        "STOMP",
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "JWT",
+        "Oracle",
+        "JPA",
+        "MyBatis",
+        "Swagger",
+        "AWS S3",
+        "WebSocket",
+      ],
+      image: null,
+      role: `담당 역할 : 관리자 페이지 중심 프론트엔드 개발 (기여도 약 60%)
+- Admin 대시보드 및 회원/여행/공지/일기·댓글/센서 관리 화면 구현
+- 라즈베리파이 서버 메트릭 실시간 모니터링 차트(WebSocket) 연동`,
+      detail: `Frontend (reactrip_react)
+- 사용자 서비스: 메인, ABOUT, 일정(FullCalendar), 투어(카카오맵), 룰렛, 일기, 연락처, 회원(로그인·회원가입·마이페이지)
+- 관리자 페이지: 회원/일정(Travel)/공지/일기·댓글/센서/라즈베리파이 차트 관리
+- UI·라이브러리: Swiper(이미지 캐러셀), FullCalendar(일정 캘린더), Chart.js + react-chartjs-2(대시보드 차트)
+- 실시간: SockJS + STOMP 기반 WebSocket으로 라즈베리파이 CPU·온도 등 시스템 메트릭 실시간 시각화
+
+Backend (reactrip_spring)
+- Java 21 + Spring Boot 3.5.x 기반 REST API 서버
+- 도메인: 인증·회원, 여행지, 일기, 관리자(회원/여행/공지/커뮤니티), 라즈베리파이 서버 메트릭 수집
+- 기술 스택: Spring Security + JWT, Oracle(JPA + MyBatis), SpringDoc OpenAPI(Swagger UI), AWS S3, WebSocket, OSHI(시스템 메트릭)`,
+      features: [
+        "여행 일정·일기·지도·룰렛·커뮤니티가 통합된 여행 기록·공유 서비스",
+        "관리자 대시보드에서 회원/여행/공지/일기·댓글·센서 데이터를 한 곳에서 관리",
+        "FullCalendar 기반 일정 관리와 카카오맵 기반 여행지 검색/시각화",
+        "Chart.js 기반 관리자 통계 차트와 라즈베리파이 실시간 모니터링 차트",
+        "JWT 기반 인증 및 ROLE_ADMIN 권한에 따른 관리자 접근 제어",
+      ],
+      troubleshooting: `트러블 슈팅 (관리자/실시간 모니터링 중심)
+- 관리자 보호 라우트: ROLE_ADMIN이 아닌 사용자가 URL만으로 관리자 페이지에 접근하는 문제 → 보호 라우트와 권한 체크 로직으로 차단
+- WebSocket 연결 설정: 라즈베리파이 메트릭 수집 시 엔드포인트·CORS·프록시 설정 불일치로 실시간 데이터가 끊기는 문제 → SockJS + STOMP 설정과 백엔드 WebSocket 설정을 일치시켜 안정화
+- 복합 도메인 관리: 일정/일기/댓글/회원/공지/센서 등 여러 도메인이 한 화면에 얽혀 복잡도가 높았던 문제 → 관리자 API와 화면을 기능별 모듈로 나누어 유지보수성을 높임`,
+      links: {
+        front: "https://github.com/kanghyunseong/reactrip_react",
+        back: "https://github.com/kanghyunseong/reactrip_spring",
+      },
+    }
   ];
 
   // 2. 기타 프로젝트 데이터
