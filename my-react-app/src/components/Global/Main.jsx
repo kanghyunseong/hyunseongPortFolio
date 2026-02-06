@@ -1,5 +1,6 @@
 import React from "react";
-import { FaGithub, FaCode, FaDatabase, FaTools } from "react-icons/fa";
+import { FaCode, FaDatabase, FaTools } from "react-icons/fa";
+import GithubOverview from "./GithubOverview";
 import {
   AboutSection,
   ProfileImage,
@@ -43,12 +44,36 @@ const Main = () => {
           <ContactLinks>
             <HashTag>#Java</HashTag>
             <HashTag>#Spring Boot</HashTag>
+            <HashTag>#Spring Security</HashTag>
             <HashTag>#React.js</HashTag>
-            <HashTag>#Oracle SQL</HashTag>
-            <HashTag>#AWS</HashTag>
+            <HashTag>#React Native</HashTag>
+            <HashTag>#TypeScript</HashTag>
+            <HashTag>#MySQL</HashTag>
+            <HashTag>#Oracle</HashTag>
+            <HashTag>#AWS EC2</HashTag>
+            <HashTag>#Docker</HashTag>
+            <HashTag>#Git</HashTag>
+            <HashTag>#GitHub</HashTag>
           </ContactLinks>
         </DescriptionBox>
       </AboutSection>
+
+      {/* GitHub 요약 / 언어 비율 / 커밋 히트맵 */}
+      <section style={{ padding: "40px 20px 70px" }}>
+        <h3
+          style={{
+            textAlign: "center",
+            marginBottom: "24px",
+            fontSize: "1.6rem",
+            fontWeight: "bold",
+          }}
+        >
+          GitHub Overview
+        </h3>
+        <GithubOverview />
+      </section>
+
+     
 
       <section style={{ padding: "80px 20px", backgroundColor: "#fcfcfc" }}>
         <h3
@@ -104,6 +129,17 @@ const Main = () => {
         </h3>
 
         {/* 최신순으로 정렬하는 것이 일반적입니다 */}
+        <TimelineItem>
+          <div className="date">2026.02</div>
+          <div> 
+            <h4>ReactTrip 프로젝트</h4>
+            <p>
+              ReactTrip은 여행 일정과 일기를 한곳에서 관리하고,
+              지도·캘린더·룰렛·커뮤니티 기능으로 여행 경험을 시각화하고 공유할 수 있는 웹 서비스입니다.
+              React 기반 SPA와 Spring Boot REST API로 구성된 풀스택 프로젝트입니다.
+            </p>
+          </div>
+        </TimelineItem>
         <TimelineItem>
           <div className="date">2025.12</div>
           <div>
