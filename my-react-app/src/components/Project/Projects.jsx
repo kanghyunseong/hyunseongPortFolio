@@ -289,7 +289,7 @@ React 기반 SPA와 Spring Boot REST API로 구성된 풀스택 프로젝트입�
         "AWS S3",
         "WebSocket", "OSHI",
       ],
-      image: "img/reactrip.png",
+      image: "image/reactrip.png",
       role: `담당 역할 : 관리자 페이지 중심 프론트엔드 개발 (기여도 약 60%)
 - Admin 대시보드 및 회원/여행/공지/일기·댓글/센서 관리 화면 구현
 - 라즈베리파이 서버 메트릭 실시간 모니터링 차트(WebSocket) 연동`,
