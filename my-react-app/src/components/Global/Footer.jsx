@@ -14,10 +14,10 @@ const Footer = () => {
           >
             <FaGithub />
           </a>
-          <a href="mailto:rkdgustjd2756@gmail.com">
+          <a href="mailto:gustjd2754@daum.net">
             <FaEnvelope />
           </a>
-          <a href="/" target="_blank" rel="noreferrer">
+          <a href="https://hyunseongkang.site" target="_blank" rel="noreferrer">
             <FaBlog />
           </a>
         </div>

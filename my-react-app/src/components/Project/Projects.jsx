@@ -498,10 +498,8 @@ Backend (reactrip_spring)
         </div>
       </CarouselContainer>
 
-      <header className="header" style={{ marginTop: "100px" }}>
-        <h2 className="title" style={{ fontSize: "2rem" }}>
-          Other Experience
-        </h2>
+      <header className="header section-spaced">
+        <h2 className="title title--secondary">Other Experience</h2>
         <p className="subtitle">
           기술적 기초를 다지기 위해 진행한 프로젝트들입니다.
         </p>
@@ -530,8 +528,8 @@ Backend (reactrip_spring)
         ))}
       </SmallGrid>
 
-      {/* ✅ [NEW] 이력서 강조 배너 (Resume Section) */}
-      <div style={{ marginTop: "100px", marginBottom: "60px" }}>
+      {/* 이력서 강조 배너 */}
+      <div className="section-spaced">
         <ResumeBanner href={resumeLink} target="_blank" rel="noreferrer">
           <div className="icon-box">
             <FaUserTie />
@@ -547,10 +545,8 @@ Backend (reactrip_spring)
       </div>
 
       {/* Study & Archive */}
-      <header className="header">
-        <h2 className="title" style={{ fontSize: "2rem" }}>
-          Study & Archive
-        </h2>
+      <header className="header section-spaced">
+        <h2 className="title title--secondary">Study & Archive</h2>
         <p className="subtitle">꾸준한 학습과 기록을 통해 성장을 증명합니다.</p>
       </header>
 
@@ -577,7 +573,7 @@ Backend (reactrip_spring)
         ))}
       </SmallGrid>
 
-      <div style={{ marginBottom: "100px" }}></div>
+      <div className="bottom-spacer" />
 
       <ProjectModal project={selectedProject} onClose={closeProject} />
     </ProjectsWrapper>

@@ -1,46 +1,59 @@
 import React from "react";
 import { FaCode, FaDatabase, FaTools } from "react-icons/fa";
 import GithubOverview from "./GithubOverview";
+import AnimateOnScroll from "./AnimateOnScroll";
 import {
+  MainWrap,
   AboutSection,
   ProfileImage,
   DescriptionBox,
   ContactLinks,
   HashTag,
+  SectionWrap,
+  SectionTitle,
   ServiceCard,
   ServiceSection,
   TimelineSection,
   TimelineItem,
 } from "./GlobalStyle";
 
+const PRIMARY = "#ff6b6b";
+
 const Main = () => {
   return (
-    <div style={{ width: "100%" }}>
+    <MainWrap>
+      <AnimateOnScroll>
       <AboutSection id="about">
-        <ProfileImage src="/img/myImage.jpeg" alt="프로필 이미지" />
+        <ProfileImage src="/img/myImage.png" alt="프로필 이미지" />
         <DescriptionBox>
           <div className="label">Available for Work</div>
           <h2>강현성</h2>
           <div className="job-title">Full-Stack Developer</div>
 
           <p>
-            안녕하세요! 문제를 해결하는 과정에서 즐거움을 느끼는 개발자
-            강현성입니다.
+            기술로 일상의 불편함을 해결하고, 효율적인 시스템을 설계하는 풀스택 개발자입니다.
+            &quot;왜 이 기술이 필요한가?&quot;를 먼저 고민하고, 그다음 구현합니다.
+            백엔드는 Spring Boot로 REST API를 설계하고, 프론트는 React로 사용자 경험을 만드는 일에 집중하고 있습니다.
           </p>
           <p>
-            최근에는 <strong>공유 전기차 커뮤니티 서비스</strong> 프로젝트를
-            통해 Spring Boot와 React를 연동하여 효율적인 데이터 처리와 직관적인
-            사용자 인터페이스를 구현하는 경험을 쌓았습니다.
+            최근에는 <strong>공유 전기차 커뮤니티 서비스</strong>에서 팀장 겸 풀스택 개발자로 참여하며,
+            공공 OpenAPI 연동, 실시간 예약·반납 로직, MyBatis 기반 DB 설계와 최적화를 담당했습니다.
+            관리자 대시보드에서는 Chart.js로 회원·차량·예약 통계를 시각화하고, Context API와 JWT로 권한을 관리해
+            기획부터 배포까지 한 사이클을 이끌었습니다.
           </p>
           <p>
-            단순히 기능을 구현하는 것에 그치지 않고, <strong>클린 코드</strong>
-            와 <strong>유지보수가 쉬운 아키텍처</strong>를 설계하기 위해
-            끊임없이 고민합니다.
+            현재는 <strong>ReactTrip</strong> 프로젝트를 진행 중입니다. ReactTrip은 여행 일정과 일기를 한곳에서 관리하고,
+            지도·캘린더·룰렛·커뮤니티 기능으로 여행 경험을 시각화하고 공유할 수 있는 웹 서비스입니다.
+            React 기반 SPA로 화면을 구성하고, Spring Boot REST API로 회원·일정·일기·지도 데이터를 다루며,
+            실제 사용할 수 있는 수준까지 구현해 보는 데 초점을 두고 있습니다.
+          </p>
+          <p>
+            단순히 동작하는 코드를 넘어 <strong>클린 코드</strong>와 <strong>유지보수·확장이 쉬운 아키텍처</strong>를 지향합니다.
+            React Native·Nest.js로 모바일과 서버를, 라즈베리 파이와 Docker로 IoT·인프라까지 다뤄 보며
+            끊임없이 학습하고 있습니다.
           </p>
 
-          <h3 style={{ marginTop: "30px", fontSize: "1.1rem" }}>
-            My Tech Stack
-          </h3>
+          <h3>My Tech Stack</h3>
           <ContactLinks>
             <HashTag>#Java</HashTag>
             <HashTag>#Spring Boot</HashTag>
@@ -57,81 +70,64 @@ const Main = () => {
           </ContactLinks>
         </DescriptionBox>
       </AboutSection>
+      </AnimateOnScroll>
 
-      {/* GitHub 요약 / 언어 비율 / 커밋 히트맵 */}
-      <section style={{ padding: "40px 20px 70px" }}>
-        <h3
-          style={{
-            textAlign: "center",
-            marginBottom: "24px",
-            fontSize: "1.6rem",
-            fontWeight: "bold",
-          }}
-        >
-          GitHub Overview
-        </h3>
+      <AnimateOnScroll>
+      <SectionWrap>
+        <SectionTitle>GitHub Overview</SectionTitle>
         <GithubOverview />
-      </section>
+      </SectionWrap>
+      </AnimateOnScroll>
 
-     
-
-      <section style={{ padding: "80px 20px", backgroundColor: "#fcfcfc" }}>
-        <h3
-          style={{
-            textAlign: "center",
-            marginBottom: "50px",
-            fontSize: "1.8rem",
-            fontWeight: "bold",
-          }}
-        >
-          What I Do
-        </h3>
+      <AnimateOnScroll>
+      <SectionWrap alt>
+        <SectionTitle>What I Do</SectionTitle>
         <ServiceSection>
+          <AnimateOnScroll delay={1}>
           <ServiceCard>
-            <FaCode size={35} color="#007bff" />
+            <FaCode size={35} color={PRIMARY} />
             <h4>Frontend Development</h4>
             <p>
               React를 사용하여 재사용 가능한 컴포넌트를 설계합니다. 사용자
               경험(UX) 향상을 위한 렌더링 최적화에 관심이 많습니다.
             </p>
           </ServiceCard>
+          </AnimateOnScroll>
 
+          <AnimateOnScroll delay={2}>
           <ServiceCard>
-            <FaDatabase size={35} color="#007bff" />
+            <FaDatabase size={35} color={PRIMARY} />
             <h4>Backend Development</h4>
             <p>
               Spring Boot를 기반으로 안정적인 REST API를 설계하고, 데이터
               무결성을 고려한 효율적인 DB 구조를 구축합니다.
             </p>
           </ServiceCard>
+          </AnimateOnScroll>
 
+          <AnimateOnScroll delay={3}>
           <ServiceCard>
-            <FaTools size={35} color="#007bff" />
+            <FaTools size={35} color={PRIMARY} />
             <h4>DevOps & Tools</h4>
             <p>
               Git Flow를 준수한 협업 경험이 있으며, AWS EC2 및 Docker를 활용한
               배포 환경 구성이 가능합니다.
             </p>
           </ServiceCard>
+          </AnimateOnScroll>
         </ServiceSection>
-      </section>
+      </SectionWrap>
+      </AnimateOnScroll>
 
       <TimelineSection id="experience">
-        <h3
-          style={{
-            textAlign: "center",
-            marginBottom: "50px",
-            fontSize: "1.8rem",
-            fontWeight: "bold",
-          }}
-        >
-          Education & Experience
-        </h3>
+        <AnimateOnScroll>
+          <SectionTitle>Education & Experience</SectionTitle>
+        </AnimateOnScroll>
 
-        {/* 최신순으로 정렬하는 것이 일반적입니다 */}
+        <AnimateOnScroll delay={1}>
         <TimelineItem>
           <div className="date">2026.02</div>
-          <div> 
+          <div>
             <h4>ReactTrip 프로젝트</h4>
             <p>
               ReactTrip은 여행 일정과 일기를 한곳에서 관리하고,
@@ -140,6 +136,9 @@ const Main = () => {
             </p>
           </div>
         </TimelineItem>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll delay={2}>
         <TimelineItem>
           <div className="date">2025.12</div>
           <div>
@@ -152,7 +151,9 @@ const Main = () => {
             </p>
           </div>
         </TimelineItem>
+        </AnimateOnScroll>
 
+        <AnimateOnScroll delay={3}>
         <TimelineItem>
           <div className="date">2025.11 - 2025.12</div>
           <div>
@@ -164,7 +165,9 @@ const Main = () => {
             </p>
           </div>
         </TimelineItem>
+        </AnimateOnScroll>
 
+        <AnimateOnScroll delay={4}>
         <TimelineItem>
           <div className="date">2025.02 - 2025.7</div>
           <div>
@@ -176,7 +179,9 @@ const Main = () => {
             </p>
           </div>
         </TimelineItem>
+        </AnimateOnScroll>
 
+        <AnimateOnScroll delay={5}>
         <TimelineItem>
           <div className="date">2025.07 - 2026.02</div>
           <div>
@@ -188,7 +193,9 @@ const Main = () => {
             </p>
           </div>
         </TimelineItem>
+        </AnimateOnScroll>
 
+        <AnimateOnScroll delay={6}>
         <TimelineItem>
           <div className="date">2025.02 - 2025.12</div>
           <div>
@@ -200,8 +207,9 @@ const Main = () => {
             </p>
           </div>
         </TimelineItem>
+        </AnimateOnScroll>
       </TimelineSection>
-    </div>
+    </MainWrap>
   );
 };
 

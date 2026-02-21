@@ -1,0 +1,118 @@
+/* ===== 테마 변수 (1. 색상 통일, 5. 여백 리듬) ===== */
+:root {
+  --color-primary: #ff6b6b;
+  --color-primary-dark: #e85555;
+  --color-primary-light: #ff8e53;
+  --color-bg: #fafafa;
+  --color-bg-alt: #f8fafc;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  /* 여백 스케일: 24, 40, 64, 80 */
+  --space-sm: 24px;
+  --space-md: 40px;
+  --space-lg: 64px;
+  --space-xl: 80px;
+  --font-heading: "Outfit", "Noto Sans KR", sans-serif;
+  --font-body: "Noto Sans KR", "Outfit", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== 스크롤/등장 애니메이션 ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpSmall {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 스크롤 시 등장 (JS에서 .in-view 추가) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.delay-1 { transition-delay: 0.08s; }
+.animate-on-scroll.delay-2 { transition-delay: 0.16s; }
+.animate-on-scroll.delay-3 { transition-delay: 0.24s; }
+.animate-on-scroll.delay-4 { transition-delay: 0.32s; }
+.animate-on-scroll.delay-5 { transition-delay: 0.4s; }
+.animate-on-scroll.delay-6 { transition-delay: 0.48s; }
+
+/* 첫 로드 시 헤더 애니메이션 */
+.animate-on-load {
+  animation: slideUpSmall 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-on-load.sub {
+  animation-delay: 0.15s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
