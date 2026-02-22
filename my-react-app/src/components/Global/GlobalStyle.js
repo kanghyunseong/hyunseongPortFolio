@@ -75,7 +75,7 @@ export const Menu = styled.ul`
 // --- Header (최신 디자인) ---
 export const HeaderSection = styled.header`
   padding: var(--space-xl) 0;
-  background: linear-gradient(180deg, #fff 0%, var(--color-bg-alt) 100%);
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 251, 250, 0.6) 45%, #fff 100%);
   text-align: center;
   font-family: var(--font-heading);
   position: relative;
@@ -205,7 +205,7 @@ export const AboutSection = styled.section`
   max-width: 1000px;
   margin: 0 auto;
   background: var(--color-bg-alt);
-  border-radius: 0;
+  border-top: 1px solid var(--color-border);
 
   @media (max-width: 768px) {
     flex-direction: column;
