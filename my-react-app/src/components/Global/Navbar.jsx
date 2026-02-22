@@ -7,7 +7,11 @@ const Navbar = () => {
     <>
       <Nav>
         <div className="container content">
-          <Logo onClick={() => navi("/")}>PORTFOLIO</Logo>
+          <Logo onClick={() => navi("/")}>
+            <span className="tag-open">&lt;</span>
+            <span className="tag-name">강현성 포트폴리오</span>
+            <span className="tag-close"> /&gt;</span>
+          </Logo>
           <Menu>
             <li>
               <a onClick={() => navi("/About")}>About</a>

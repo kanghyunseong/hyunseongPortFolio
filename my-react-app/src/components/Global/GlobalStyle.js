@@ -33,14 +33,27 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.div`
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
   cursor: pointer;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   transition: color 0.2s;
-  &:hover {
+  font-family: "Outfit", var(--font-body), monospace;
+
+  .tag-open,
+  .tag-close {
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+  .tag-name {
+    color: var(--color-primary);
+  }
+  &:hover .tag-name {
     color: var(--color-primary-dark);
+  }
+  &:hover .tag-open,
+  &:hover .tag-close {
+    color: var(--color-text);
   }
 `;
 
